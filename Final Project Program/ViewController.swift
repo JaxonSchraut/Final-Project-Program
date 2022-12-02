@@ -11,6 +11,8 @@ class ViewController: UIViewController {
 
     var x = 1
     
+    var ethan = "Bad at pickleball"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
