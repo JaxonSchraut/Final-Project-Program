@@ -8,6 +8,7 @@
 import Foundation
 public class Pokemon{
     
+    var name: String
     var hp: Double
     var attack: Double
     var def: Double
@@ -24,7 +25,8 @@ public class Pokemon{
         case rock
     }
     
-    init(hp: Double, attack: Double, def: Double, type: typing, imageFile: String) {
+    init(name: String, hp: Double, attack: Double, def: Double, type: typing, imageFile: String) {
+        self.name = name
         self.hp = hp
         self.attack = attack
         self.def = def
