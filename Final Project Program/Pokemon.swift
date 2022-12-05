@@ -1,0 +1,35 @@
+//
+//  Pokemon.swift
+//  Final Project Program
+//
+//  Created by JAXON SCHRAUT on 12/5/22.
+//
+
+import Foundation
+public class Pokemon{
+    
+    var hp: Double
+    var attack: Double
+    var def: Double
+    var type: typing
+    var imageFile: String
+    
+    enum typing{
+        case water
+        case fire
+        case grass
+        case electric
+        case ground
+        case steel
+        case rock
+    }
+    
+    init(hp: Double, attack: Double, def: Double, type: typing, imageFile: String) {
+        self.hp = hp
+        self.attack = attack
+        self.def = def
+        self.type = type
+        self.imageFile = imageFile
+    }
+    
+}

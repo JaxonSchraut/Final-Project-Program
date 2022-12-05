@@ -14,6 +14,8 @@
 		8961C3BE293A395C003504A2 /* WinLossViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8961C3BD293A395C003504A2 /* WinLossViewController.swift */; };
 		8961C3C0293A3BC1003504A2 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8961C3BF293A3BC1003504A2 /* SwitchTableViewCell.swift */; };
 		8961C3C2293A3CE3003504A2 /* StatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8961C3C1293A3CE3003504A2 /* StatsTableViewCell.swift */; };
+		89885360293E34800044C685 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8988535F293E34800044C685 /* Pokemon.swift */; };
+		89885362293E360B0044C685 /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89885361293E360B0044C685 /* Move.swift */; };
 		8999EEC3293646B70003527F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8999EEC2293646B70003527F /* AppDelegate.swift */; };
 		8999EEC5293646B70003527F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8999EEC4293646B70003527F /* SceneDelegate.swift */; };
 		8999EEC7293646B70003527F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8999EEC6293646B70003527F /* ViewController.swift */; };
@@ -31,6 +33,8 @@
 		8961C3BD293A395C003504A2 /* WinLossViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinLossViewController.swift; sourceTree = "<group>"; };
 		8961C3BF293A3BC1003504A2 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		8961C3C1293A3CE3003504A2 /* StatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewCell.swift; sourceTree = "<group>"; };
+		8988535F293E34800044C685 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		89885361293E360B0044C685 /* Move.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
 		8999EEBF293646B70003527F /* Final Project Program.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Final Project Program.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8999EEC2293646B70003527F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8999EEC4293646B70003527F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 				8961C3B7293A365F003504A2 /* BattleViewController.swift */,
 				8961C3B5293A3646003504A2 /* TeamViewController.swift */,
 				8999EECE293646B80003527F /* Assets.xcassets */,
+				8988535F293E34800044C685 /* Pokemon.swift */,
+				89885361293E360B0044C685 /* Move.swift */,
 				8999EED0293646B80003527F /* LaunchScreen.storyboard */,
 				8999EED3293646B80003527F /* Info.plist */,
 				8999EECB293646B70003527F /* Final_Project_Program.xcdatamodeld */,
@@ -165,8 +171,10 @@
 				8961C3B8293A365F003504A2 /* BattleViewController.swift in Sources */,
 				8961C3BE293A395C003504A2 /* WinLossViewController.swift in Sources */,
 				8999EEC7293646B70003527F /* ViewController.swift in Sources */,
+				89885362293E360B0044C685 /* Move.swift in Sources */,
 				8961C3BC293A3946003504A2 /* StatsViewController.swift in Sources */,
 				8999EECD293646B70003527F /* Final_Project_Program.xcdatamodeld in Sources */,
+				89885360293E34800044C685 /* Pokemon.swift in Sources */,
 				8999EEC3293646B70003527F /* AppDelegate.swift in Sources */,
 				8999EEC5293646B70003527F /* SceneDelegate.swift in Sources */,
 				8961C3C2293A3CE3003504A2 /* StatsTableViewCell.swift in Sources */,
