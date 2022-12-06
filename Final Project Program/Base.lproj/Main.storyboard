@@ -23,6 +23,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Battle!">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="Puk-6l-Zrs" kind="show" id="lgg-Ma-kvd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4c-6a-GCz">
                                 <rect key="frame" x="142" y="560" width="91" height="50"/>
@@ -244,6 +247,7 @@
                         <viewLayoutGuide key="safeArea" id="2Cs-gs-L0b"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="zIv-T1-RnG"/>
                     <connections>
                         <outlet property="pokemonImage1" destination="RdI-aq-j7i" id="p0I-fk-VSF"/>
                         <outlet property="pokemonImage2" destination="qyl-mJ-82z" id="p9x-r7-gfN"/>
@@ -255,6 +259,7 @@
                         <outlet property="pokemonImage8" destination="GZf-ii-5Uq" id="5jv-TM-l7U"/>
                         <outlet property="pokemonImage9" destination="9go-ld-ma1" id="Ehe-PQ-PCQ"/>
                         <outlet property="selectionLabel" destination="oae-kt-vOl" id="EBa-Yk-LTO"/>
+                        <segue destination="pb3-xQ-xWf" kind="show" identifier="toBattleSegue" id="vy7-7L-rqZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uh7-cq-Tew" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -328,6 +333,7 @@
                         <viewLayoutGuide key="safeArea" id="unW-BZ-DJD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="fEh-x2-Tdd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h08-qp-jil" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

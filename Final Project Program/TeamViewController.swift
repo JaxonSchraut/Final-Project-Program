@@ -31,6 +31,7 @@ class TeamViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         selectionLabel.text = ""
+        loadSelected()
     }
     
     func loadSelected(){
@@ -133,7 +134,9 @@ class TeamViewController: UIViewController {
         }
     }
     
-    
+    override func performSegue(withIdentifier identifier: String, sender: Any?) {
+        performSegue(withIdentifier: "toBattleSegue", sender: self)
+    }
     
     
     
