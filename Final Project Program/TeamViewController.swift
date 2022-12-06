@@ -33,10 +33,17 @@ class TeamViewController: UIViewController {
         selectionLabel.text = ""
     }
     
+    func loadSelected(){
+        var count = 0
+        while count < 10 {
+            selectedToDisplay.append(allPokemon[Int.random(in: 1..<allPokemon.count)])
+            count += 1
+        }
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nvc = segue
-        // Pass the selected object to the new view controller.
+        let nvc = segue.destination as! BattleViewController
+        nvc.team = selected
     }
    
     //all of the actions for choosing which pokemon you want

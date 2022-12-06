@@ -163,7 +163,7 @@
                                 <rect key="frame" x="14" y="146" width="109" height="112"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
                                     <action selector="choosePoke1:" destination="Puk-6l-Zrs" eventType="touchUpInside" id="634-fL-up2"/>
                                 </connections>
@@ -172,7 +172,7 @@
                                 <rect key="frame" x="130" y="146" width="109" height="112"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
                                     <action selector="choosePoke2:" destination="Puk-6l-Zrs" eventType="touchUpInside" id="a1e-kM-2VV"/>
                                 </connections>
@@ -181,7 +181,7 @@
                                 <rect key="frame" x="250" y="146" width="109" height="112"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
                                     <action selector="choosePoke3:" destination="Puk-6l-Zrs" eventType="touchUpInside" id="9IS-bX-GZg"/>
                                 </connections>
@@ -190,7 +190,7 @@
                                 <rect key="frame" x="14" y="266" width="109" height="112"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
                                     <action selector="choosePoke4:" destination="Puk-6l-Zrs" eventType="touchUpInside" id="gM5-W9-wuD"/>
                                 </connections>
@@ -199,7 +199,7 @@
                                 <rect key="frame" x="249" y="266" width="109" height="112"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
                                     <action selector="choosePoke6:" destination="Puk-6l-Zrs" eventType="touchUpInside" id="Hrf-Lk-ISa"/>
                                 </connections>
@@ -208,7 +208,7 @@
                                 <rect key="frame" x="129" y="266" width="109" height="112"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
                                     <action selector="choosePoke5:" destination="Puk-6l-Zrs" eventType="touchUpInside" id="hck-aI-VJA"/>
                                 </connections>
@@ -217,7 +217,7 @@
                                 <rect key="frame" x="136" y="386" width="109" height="112"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
                                     <action selector="choosePoke8:" destination="Puk-6l-Zrs" eventType="touchUpInside" id="Nbp-wn-J3W"/>
                                 </connections>
@@ -226,7 +226,7 @@
                                 <rect key="frame" x="20" y="386" width="109" height="112"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
                                     <action selector="choosePoke7:" destination="Puk-6l-Zrs" eventType="touchUpInside" id="alE-bC-9vw"/>
                                 </connections>
@@ -235,7 +235,7 @@
                                 <rect key="frame" x="250" y="386" width="109" height="112"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
                                     <action selector="choosePoke9:" destination="Puk-6l-Zrs" eventType="touchUpInside" id="Yoj-4J-gQS"/>
                                 </connections>
@@ -269,14 +269,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPf-i2-iF3">
-                                <rect key="frame" x="275" y="740" width="84" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Switch">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
-                                </buttonConfiguration>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LDJ-q6-456">
                                 <rect key="frame" x="36" y="689" width="302" height="42.666666666666664"/>
                                 <subviews>
@@ -325,6 +317,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kills: 0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VvN-ly-RLB">
+                                <rect key="frame" x="1" y="578" width="58" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="unW-BZ-DJD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -333,44 +332,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h08-qp-jil" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2872.8000000000002" y="3.6945812807881775"/>
-        </scene>
-        <!--Switch View Controller-->
-        <scene sceneID="9Mc-hb-M2W">
-            <objects>
-                <viewController id="M9T-1A-6ei" customClass="SwitchViewController" customModule="Final_Project_Program" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="RI9-Og-MWN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="R9P-fH-6tc">
-                                <rect key="frame" x="0.0" y="47" width="375" height="731"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="bMf-Vt-Y0U" customClass="SwitchTableViewCell" customModule="Final_Project_Program" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="375" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bMf-Vt-Y0U" id="rTd-5P-Ocy">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="WWH-Q4-KNt"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="WWH-Q4-KNt" firstAttribute="bottom" secondItem="R9P-fH-6tc" secondAttribute="bottom" id="Btj-dN-WHC"/>
-                            <constraint firstItem="R9P-fH-6tc" firstAttribute="top" secondItem="WWH-Q4-KNt" secondAttribute="top" id="MTP-iG-XyO"/>
-                            <constraint firstItem="WWH-Q4-KNt" firstAttribute="trailing" secondItem="R9P-fH-6tc" secondAttribute="trailing" id="cHa-Wd-hQs"/>
-                            <constraint firstItem="R9P-fH-6tc" firstAttribute="leading" secondItem="WWH-Q4-KNt" secondAttribute="leading" id="u8k-RR-wKK"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="jQJ-UH-HiN"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Nwe-X7-wQh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3743" y="4"/>
         </scene>
         <!--Win Loss View Controller-->
         <scene sceneID="uaq-Zh-YwD">
