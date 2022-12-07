@@ -9,6 +9,8 @@ import UIKit
 
 class BattleViewController: UIViewController {
 
+    var computerTeam = [Pokemon]()
+    
     var team = [Pokemon]()
     
     override func viewDidLoad() {
