@@ -23,25 +23,38 @@ class TeamViewController: UIViewController {
     @IBOutlet weak var pokemonImage8: UIImageView!
     @IBOutlet weak var pokemonImage9: UIImageView!
     @IBOutlet weak var selectionLabel: UILabel!
-    var allPokemon = [Pokemon(name: "Charizard", hp: 78, attack: 193, def: 163, type: .fire, imageFile: "charizard"), Pokemon(name: "Rapidash", hp: 65, attack: 180, def: 150, type: .fire, imageFile: "rapidash"),Pokemon(name: "Darmanitan", hp: 105, attack: 170, def: 110, type: .fire, imageFile: "darmanitan"),Pokemon(name: "Venusaur", hp: 80, attack: 182, def: 183, type: .grass, imageFile: "venusaur"),Pokemon(name: "Leavanny", hp: 75, attack: 173, def: 160, type: .grass, imageFile: "leavanny"),Pokemon(name: "Ludicolo", hp: 80, attack: 160, def: 170, type: .grass, imageFile: "ludicolo"),Pokemon(name: "Blastoise", hp: 79, attack: 168, def: 205, type: .water, imageFile: "blastoise"),Pokemon(name: "Wailord", hp: 170, attack: 180, def: 90, type: .water, imageFile: "wailord"),Pokemon(name: "Octillery", hp: 75, attack: 210, def: 150, type: .water, imageFile: "octilleruy"),Pokemon(name: "Aggron", hp: 70, attack: 170, def: 240, type: .rock, imageFile: "aggron"),Pokemon(name: "Barbaracle", hp: 72, attack: 159, def: 201, type: .rock, imageFile: "barbaracle"), Pokemon(name: "Rhydon", hp: 105, attack: 175, def: 165, type: .rock, imageFile: "rhydon"),Pokemon(name: "Empoleon", hp: 84, attack: 197, def: 189, type: .steel, imageFile: "empoleon"),Pokemon(name: "Scizor", hp: 70, attack: 185, def: 180, type: .steel, imageFile: "scizor"),Pokemon(name: "Klefki", hp: 58, attack: 162, def: 178, type: .steel, imageFile: "klefki"),Pokemon(name: "Raichu", hp: 60, attack: 180, def: 125, type: .electric, imageFile: "raichu"),Pokemon(name: "Jolteon", hp: 65, attack: 175, def: 155, type: .electric, imageFile: "jolteon"),Pokemon(name: "Ampharos", hp: 90, attack: 190, def: 175, type: .electric, imageFile: "ampharos"),Pokemon(name: "Swampert", hp: 100, attack: 195, def: 180, type: .ground, imageFile: "swampert"),Pokemon(name: "Nidoking", hp: 81, attack: 187, def: 152, type: .ground, imageFile: "nidoking"),Pokemon(name: "Gastrodon", hp: 111, attack: 175, def: 150, type: .ground, imageFile: "gastrodon")]
+    @IBOutlet weak var refreshButton: UIButton!
+    var allPokemon = [Pokemon]()
     var selectedToDisplay = [Pokemon]()
     var selected = [Pokemon(name: "", hp: 0, attack: 0, def: 0, type: .ground, imageFile: ""), Pokemon(name: "", hp: 0, attack: 0, def: 0, type: .ground, imageFile: ""), Pokemon(name: "", hp: 0, attack: 0, def: 0, type: .ground, imageFile: "")]
     var chosen = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        allPokemon = [Pokemon(name: "Charizard", hp: 78, attack: 193, def: 163, type: .fire, imageFile: "charizard"), Pokemon(name: "Rapidash", hp: 65, attack: 180, def: 150, type: .fire, imageFile: "rapidash"),Pokemon(name: "Darmanitan", hp: 105, attack: 170, def: 110, type: .fire, imageFile: "darmanitan"),Pokemon(name: "Venusaur", hp: 80, attack: 182, def: 183, type: .grass, imageFile: "venusaur"),Pokemon(name: "Leavanny", hp: 75, attack: 173, def: 160, type: .grass, imageFile: "leavanny"),Pokemon(name: "Ludicolo", hp: 80, attack: 160, def: 170, type: .grass, imageFile: "ludicolo"),Pokemon(name: "Blastoise", hp: 79, attack: 168, def: 205, type: .water, imageFile: "blastoise"),Pokemon(name: "Wailord", hp: 170, attack: 180, def: 90, type: .water, imageFile: "wailord"),Pokemon(name: "Octillery", hp: 75, attack: 210, def: 150, type: .water, imageFile: "octilleruy"),Pokemon(name: "Aggron", hp: 70, attack: 170, def: 240, type: .rock, imageFile: "aggron"),Pokemon(name: "Barbaracle", hp: 72, attack: 159, def: 201, type: .rock, imageFile: "barbaracle"), Pokemon(name: "Rhydon", hp: 105, attack: 175, def: 165, type: .rock, imageFile: "rhydon"),Pokemon(name: "Empoleon", hp: 84, attack: 197, def: 189, type: .steel, imageFile: "empoleon"),Pokemon(name: "Scizor", hp: 70, attack: 185, def: 180, type: .steel, imageFile: "scizor"),Pokemon(name: "Klefki", hp: 58, attack: 162, def: 178, type: .steel, imageFile: "klefki"),Pokemon(name: "Raichu", hp: 60, attack: 180, def: 125, type: .electric, imageFile: "raichu"),Pokemon(name: "Jolteon", hp: 65, attack: 175, def: 155, type: .electric, imageFile: "jolteon"),Pokemon(name: "Ampharos", hp: 90, attack: 190, def: 175, type: .electric, imageFile: "ampharos"),Pokemon(name: "Swampert", hp: 100, attack: 195, def: 180, type: .ground, imageFile: "swampert"),Pokemon(name: "Nidoking", hp: 81, attack: 187, def: 152, type: .ground, imageFile: "nidoking"),Pokemon(name: "Gastrodon", hp: 111, attack: 175, def: 150, type: .ground, imageFile: "gastrodon")]
         selectionLabel.text = ""
         loadSelected()
-        pokemonImage1.image = UIImage(named: selectedToDisplay[0].imageFile)
-        pokemonImage2.image = UIImage(named: selectedToDisplay[1].imageFile)
+        
     }
     
     func loadSelected(){
         var count = 0
         while count < 10 {
-            selectedToDisplay.append(allPokemon[Int.random(in: 1..<allPokemon.count)])
+             var x = Int.random(in: 1..<allPokemon.count)
+            selectedToDisplay.append(allPokemon.remove(at: x))
+            
+            
             count += 1
         }
+        pokemonImage1.image = UIImage(named: selectedToDisplay[0].imageFile)
+        pokemonImage2.image = UIImage(named: selectedToDisplay[1].imageFile)
+        pokemonImage3.image = UIImage(named: selectedToDisplay[2].imageFile)
+        pokemonImage4.image = UIImage(named: selectedToDisplay[3].imageFile)
+        pokemonImage5.image = UIImage(named: selectedToDisplay[4].imageFile)
+        pokemonImage6.image = UIImage(named: selectedToDisplay[5].imageFile)
+        pokemonImage7.image = UIImage(named: selectedToDisplay[6].imageFile)
+        pokemonImage8.image = UIImage(named: selectedToDisplay[7].imageFile)
+        pokemonImage9.image = UIImage(named: selectedToDisplay[8].imageFile)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -49,6 +62,10 @@ class TeamViewController: UIViewController {
         nvc.team = selected
     }
    
+    @IBAction func confirmAction(_ sender: UIButton) {
+        performSegue(withIdentifier: "toBattleSegue", sender: self)
+    }
+    
     //all of the actions for choosing which pokemon you want
     /*button format:
     1 2 3
@@ -136,10 +153,13 @@ class TeamViewController: UIViewController {
         }
     }
     
-    override func performSegue(withIdentifier identifier: String, sender: Any?) {
-        performSegue(withIdentifier: "toBattleSegue", sender: self)
-    }
     
+    
+    @IBAction func refreshAction(_ sender: UIButton) {
+        selectedToDisplay = [Pokemon]()
+        loadSelected()
+        refreshButton.isHidden = true
+    }
     
     
 }
