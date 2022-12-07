@@ -32,6 +32,8 @@ class TeamViewController: UIViewController {
         super.viewDidLoad()
         selectionLabel.text = ""
         loadSelected()
+        pokemonImage1.image = UIImage(named: selectedToDisplay[0].imageFile)
+        pokemonImage2.image = UIImage(named: selectedToDisplay[1].imageFile)
     }
     
     func loadSelected(){
