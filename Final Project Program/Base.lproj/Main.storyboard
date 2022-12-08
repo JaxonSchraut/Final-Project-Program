@@ -368,7 +368,6 @@
                         <outlet property="move1Button" destination="n4B-RU-fhr" id="78E-KS-DM4"/>
                         <outlet property="move2Button" destination="aX9-xr-pcP" id="W4k-9o-Uru"/>
                         <outlet property="move3Button" destination="7Zg-kn-9hj" id="8ek-tg-sCX"/>
-                        <outlet property="playerActivePokemonHPLa" destination="rh4-ty-MxV" id="f6B-9x-U3e"/>
                         <outlet property="playerActivePokemonHPLabel" destination="rh4-ty-MxV" id="NIy-ZO-mAO"/>
                         <outlet property="playerActivePokemonImage" destination="L3F-Va-tgO" id="KQf-Z3-fzy"/>
                         <outlet property="playerKillsLabel" destination="VvN-ly-RLB" id="lyt-7d-k8L"/>

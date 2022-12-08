@@ -11,6 +11,8 @@ class BattleViewController: UIViewController {
 
     var computerTeam = [Pokemon]()
     var team = [Pokemon]()
+    var current = 0
+    var currentComp = 0
     
     @IBOutlet weak var playerKillsLabel: UILabel!
     @IBOutlet weak var compKillsLabel: UILabel!
@@ -26,7 +28,10 @@ class BattleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        playerActivePokemonImage.image = UIImage(named: team[current].imageFile)
+        playerActivePokemonHPLabel.text = String(team[current].hp)
+        compActivePokemonImage.image = UIImage(named: computerTeam[currentComp].imageFile)
+        compActivePokemonHPLabel.text = String(computerTeam[currentComp].hp)
     }
     
 
