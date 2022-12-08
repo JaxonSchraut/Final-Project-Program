@@ -34,14 +34,14 @@ class TeamViewController: UIViewController {
         allPokemon = [Pokemon(name: "Charizard", hp: 78, attack: 193, def: 163, type: .fire, imageFile: "charizard"), Pokemon(name: "Rapidash", hp: 65, attack: 180, def: 150, type: .fire, imageFile: "rapidash"),Pokemon(name: "Darmanitan", hp: 105, attack: 170, def: 110, type: .fire, imageFile: "darmanitan"),Pokemon(name: "Venusaur", hp: 80, attack: 182, def: 183, type: .grass, imageFile: "venusaur"),Pokemon(name: "Leavanny", hp: 75, attack: 173, def: 160, type: .grass, imageFile: "leavanny"),Pokemon(name: "Ludicolo", hp: 80, attack: 160, def: 170, type: .grass, imageFile: "ludicolo"),Pokemon(name: "Blastoise", hp: 79, attack: 168, def: 205, type: .water, imageFile: "blastoise"),Pokemon(name: "Wailord", hp: 170, attack: 180, def: 90, type: .water, imageFile: "wailord"),Pokemon(name: "Octillery", hp: 75, attack: 210, def: 150, type: .water, imageFile: "octilleruy"),Pokemon(name: "Aggron", hp: 70, attack: 170, def: 240, type: .rock, imageFile: "aggron"),Pokemon(name: "Barbaracle", hp: 72, attack: 159, def: 201, type: .rock, imageFile: "barbaracle"), Pokemon(name: "Rhydon", hp: 105, attack: 175, def: 165, type: .rock, imageFile: "rhydon"),Pokemon(name: "Empoleon", hp: 84, attack: 197, def: 189, type: .steel, imageFile: "empoleon"),Pokemon(name: "Scizor", hp: 70, attack: 185, def: 180, type: .steel, imageFile: "scizor"),Pokemon(name: "Klefki", hp: 58, attack: 162, def: 178, type: .steel, imageFile: "klefki"),Pokemon(name: "Raichu", hp: 60, attack: 180, def: 125, type: .electric, imageFile: "raichu"),Pokemon(name: "Jolteon", hp: 65, attack: 175, def: 155, type: .electric, imageFile: "jolteon"),Pokemon(name: "Ampharos", hp: 90, attack: 190, def: 175, type: .electric, imageFile: "ampharos"),Pokemon(name: "Swampert", hp: 100, attack: 195, def: 180, type: .ground, imageFile: "swampert"),Pokemon(name: "Nidoking", hp: 81, attack: 187, def: 152, type: .ground, imageFile: "nidoking"),Pokemon(name: "Gastrodon", hp: 111, attack: 175, def: 150, type: .ground, imageFile: "gastrodon")]
         selectionLabel.text = ""
         loadSelected()
-        var x = Int.random(in: 1...21)
+        let x = Int.random(in: 0...20)
                 var y = x
                 var z = x
                 while y == x{
-                    y = Int.random(in: 1...21)
+                    y = Int.random(in: 0...20)
                 }
                 while z == x || z == y{
-                    z = Int.random(in: 1...21)
+                    z = Int.random(in: 0...20)
                 }
                 randomComputerTeam.append(allPokemon[x])
                 randomComputerTeam.append(allPokemon[y])
@@ -51,10 +51,8 @@ class TeamViewController: UIViewController {
     func loadSelected(){
         var count = 0
         while count < 10 {
-             var x = Int.random(in: 1..<allPokemon.count)
+            let x = Int.random(in: 1..<allPokemon.count)
             selectedToDisplay.append(allPokemon.remove(at: x))
-            
-            
             count += 1
         }
         pokemonImage1.image = UIImage(named: selectedToDisplay[0].imageFile)

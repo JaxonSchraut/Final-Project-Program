@@ -342,11 +342,37 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HP: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rh4-ty-MxV">
+                                <rect key="frame" x="91" y="662" width="193" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HP: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nM4-1c-gaw">
+                                <rect key="frame" x="91" y="215" width="193" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="unW-BZ-DJD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="fEh-x2-Tdd"/>
+                    <connections>
+                        <outlet property="compActivePokemonHPLabel" destination="nM4-1c-gaw" id="r10-qp-bVR"/>
+                        <outlet property="compActivePokemonImage" destination="11X-1c-pkt" id="SPI-JJ-rAh"/>
+                        <outlet property="compKillsLabel" destination="RX6-ux-feG" id="Ily-Du-iVn"/>
+                        <outlet property="move1Button" destination="n4B-RU-fhr" id="78E-KS-DM4"/>
+                        <outlet property="move2Button" destination="aX9-xr-pcP" id="W4k-9o-Uru"/>
+                        <outlet property="move3Button" destination="7Zg-kn-9hj" id="8ek-tg-sCX"/>
+                        <outlet property="playerActivePokemonHPLa" destination="rh4-ty-MxV" id="f6B-9x-U3e"/>
+                        <outlet property="playerActivePokemonHPLabel" destination="rh4-ty-MxV" id="NIy-ZO-mAO"/>
+                        <outlet property="playerActivePokemonImage" destination="L3F-Va-tgO" id="KQf-Z3-fzy"/>
+                        <outlet property="playerKillsLabel" destination="VvN-ly-RLB" id="lyt-7d-k8L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h08-qp-jil" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
