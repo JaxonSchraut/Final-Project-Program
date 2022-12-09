@@ -371,6 +371,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="fEh-x2-Tdd"/>
                     <connections>
+                        <outlet property="annoucerLabel" destination="uCy-kT-Xo9" id="4gC-x8-y4O"/>
                         <outlet property="compActivePokemonHPLabel" destination="nM4-1c-gaw" id="r10-qp-bVR"/>
                         <outlet property="compActivePokemonImage" destination="11X-1c-pkt" id="SPI-JJ-rAh"/>
                         <outlet property="compKillsLabel" destination="RX6-ux-feG" id="Ily-Du-iVn"/>

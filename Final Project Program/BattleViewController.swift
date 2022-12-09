@@ -20,6 +20,7 @@ class BattleViewController: UIViewController {
     @IBOutlet weak var playerActivePokemonHPLabel: UILabel!
     @IBOutlet weak var compActivePokemonImage: UIImageView!
     @IBOutlet weak var compActivePokemonHPLabel: UILabel!
+    @IBOutlet weak var annoucerLabel: UILabel!
     
     @IBOutlet weak var move1Button: UIButton!
     @IBOutlet weak var move2Button: UIButton!
@@ -27,7 +28,7 @@ class BattleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationItem.setHidesBackButton(true, animated: false)
         playerActivePokemonImage.image = UIImage(named: team[current].imageFile)
         playerActivePokemonHPLabel.text = String(team[current].hp)
         compActivePokemonImage.image = UIImage(named: computerTeam[currentComp].imageFile)
@@ -35,8 +36,31 @@ class BattleViewController: UIViewController {
     }
     
     @IBAction func Move1Action(_ sender: UIButton) {
-        computerTeam[currentComp].hp -= team[current].attack*(checkTypeResult(pokemon: team[current]))
-        compActivePokemonHPLabel.text = "\(computerTeam[currentComp].hp)"
+        var toDeal = computerTeam[currentComp].def - team[current].attack*(checkTypeResult(pokemon: team[current]))
+        if toDeal > 0 {
+            toDeal = 0
+        }
+    
+        computerTeam[currentComp].hp += toDeal
+        
+        if computerTeam[currentComp].hp <= 0{
+            if currentComp < 2{
+                currentComp += 1
+                compActivePokemonImage.image = UIImage(named: computerTeam[currentComp].imageFile)
+                compActivePokemonHPLabel.text = String(computerTeam[currentComp].hp)
+                annoucerLabel.text = "The special attack was lethal, The computer puts in \(computerTeam[currentComp].name)"
+            }else{
+                compActivePokemonHPLabel.text = "0"
+                annoucerLabel.text = "You have knocked out the entire enemy team, Player Wins!"
+            }
+        } else{
+            compActivePokemonHPLabel.text = "\(computerTeam[currentComp].hp)"
+            if toDeal < 0{
+                annoucerLabel.text = "\(team[current].name) used thier special attack, it did \(-(toDeal)) damage!"
+            }else{
+                annoucerLabel.text = "\(team[current].name) used thier special attack, it did 0 damage!"
+            }
+        }
     }
     @IBAction func Move2Action(_ sender: UIButton) {
         
