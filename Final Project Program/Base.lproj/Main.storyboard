@@ -296,6 +296,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Move 1">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="Move1Action:" destination="pb3-xQ-xWf" eventType="touchUpInside" id="lki-ag-Bmg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aX9-xr-pcP">
                                 <rect key="frame" x="137" y="696" width="100.66666666666667" height="42.666666666666664"/>
@@ -304,6 +307,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Move 2">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="Move2Action:" destination="pb3-xQ-xWf" eventType="touchUpInside" id="vH0-zc-uOK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Zg-kn-9hj">
                                 <rect key="frame" x="258" y="696" width="100.66666666666667" height="42.666666666666664"/>
@@ -312,6 +318,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Move 3">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="Move3Action:" destination="pb3-xQ-xWf" eventType="touchUpInside" id="V9P-aX-jpo"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L3F-Va-tgO">
                                 <rect key="frame" x="67" y="526" width="240" height="128"/>

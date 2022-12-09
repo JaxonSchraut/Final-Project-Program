@@ -34,7 +34,14 @@ class BattleViewController: UIViewController {
         compActivePokemonHPLabel.text = String(computerTeam[currentComp].hp)
     }
     
-
+    @IBAction func Move1Action(_ sender: UIButton) {
+        
+    }
+    @IBAction func Move2Action(_ sender: UIButton) {
+        
+    }
     
-
+    @IBAction func Move3Action(_ sender: UIButton) {
+    }
+    
 }
