@@ -72,14 +72,17 @@ class BattleViewController: UIViewController {
             annoucerLabel.text = "\(team[current].name) struck \(computerTeam[currentComp].name) for 5 damage!"
         }
         compActivePokemonHPLabel.text = String(Int(computerTeam[currentComp].hp))
+        playerActivePokemonHPLabel.text = String(Int(team[current].hp))
     }
     
     @IBAction func Move3Action(_ sender: UIButton) {
-        team[current].hp += (team[current].def / 4)
+        var x = (team[current].def / 4)
+        team[current].hp += x
         if team[current].hp > team[current].maxHP{
             team[current].hp = team[current].maxHP
         }
-        
+        playerActivePokemonHPLabel.text = String(Int(team[current].hp))
+        annoucerLabel.text = "\(team[current].name) healed for \(x) health"
     }
     
     func checkTypeResult(pokemon: Pokemon) -> Double{
