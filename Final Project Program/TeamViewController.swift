@@ -74,7 +74,9 @@ class TeamViewController: UIViewController {
     }
    
     @IBAction func confirmAction(_ sender: UIButton) {
-        performSegue(withIdentifier: "toBattleSegue", sender: self)
+        if chosen == 3 {
+            performSegue(withIdentifier: "toBattleSegue", sender: self)
+        }
     }
     
     //all of the actions for choosing which pokemon you want
