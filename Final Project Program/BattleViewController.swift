@@ -85,6 +85,58 @@ class BattleViewController: UIViewController {
         annoucerLabel.text = "\(team[current].name) healed for \(x) health"
     }
     
+    @IBAction func makeComputerMoveButton(_ sender: Any) {
+            //var x = Int.random(in: 1...3)
+            
+            var x = 1
+            
+            if x == 1 {
+                
+                var toDeal = team[current].def - computerTeam[currentComp].attack*(checkTypeResult(pokemon: team[currentComp]))
+                if toDeal > 0 {
+                    toDeal = 0
+                }
+            
+                team[current].hp += toDeal
+                
+                if team[current].hp <= 0{
+                    if current < 2{
+                        current += 1
+                        playerActivePokemonImage.image = UIImage(named: team[current].imageFile)
+                        playerActivePokemonHPLabel.text = String(team[current].hp)
+                        annoucerLabel.text = "The special attack was lethal, Your team puts in \(team[current].name)"
+                    }else{
+                        playerActivePokemonHPLabel.text = "0"
+                        annoucerLabel.text = "The computer has knocked out your entire enemy team, Computer Wins!"
+                    }
+                } else{
+                    playerActivePokemonHPLabel.text = "\(team[current].hp)"
+                    if toDeal < 0{
+                        annoucerLabel.text = "\(computerTeam[currentComp].name) used thier special attack, it did \(-(toDeal)) damage!"
+                    }else{
+                        annoucerLabel.text = "\(computerTeam[currentComp].name) used thier special attack, it did 0 damage!"
+                    }
+                }
+                
+            }
+            
+            if x == 2 {
+                
+            }
+            
+            if x == 3{
+                var x = (computerTeam[currentComp].def / 4)
+                computerTeam[currentComp].hp += x
+                if computerTeam[currentComp].hp > computerTeam[currentComp].maxHP{
+                    computerTeam[currentComp].hp = computerTeam[currentComp].maxHP
+                }
+                playerActivePokemonHPLabel.text = String(Int(team[current].hp))
+                annoucerLabel.text = "\(team[current].name) healed for \(x) health"
+            }
+            
+        
+    }
+    
     func checkTypeResult(pokemon: Pokemon) -> Double{
         switch (pokemon.type) {
         case .fire:
