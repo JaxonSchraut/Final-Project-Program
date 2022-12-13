@@ -14,6 +14,7 @@ public class Pokemon{
     var def: Double
     var type: typing
     var imageFile: String
+    var maxHP: Double
     
     enum typing{
         case water
@@ -32,6 +33,7 @@ public class Pokemon{
         self.def = def
         self.type = type
         self.imageFile = imageFile
+        maxHP = hp
     }
     
 }

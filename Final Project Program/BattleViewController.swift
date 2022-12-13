@@ -63,10 +63,23 @@ class BattleViewController: UIViewController {
         }
     }
     @IBAction func Move2Action(_ sender: UIButton) {
-        
+        let x = (team[current].attack * 0.9) / (computerTeam[currentComp].def * 0.6)
+        if (computerTeam[currentComp].hp) - x > 0 &&  x > 5{
+            computerTeam[currentComp].hp =  computerTeam[currentComp].hp - x
+            annoucerLabel.text = "\(team[current].name) struck \(computerTeam[currentComp].name) for \(x) damage!"
+        } else {
+            computerTeam[currentComp].hp -= 5
+            annoucerLabel.text = "\(team[current].name) struck \(computerTeam[currentComp].name) for 5 damage!"
+        }
+        compActivePokemonHPLabel.text = String(Int(computerTeam[currentComp].hp))
     }
     
     @IBAction func Move3Action(_ sender: UIButton) {
+        team[current].hp += (team[current].def / 4)
+        if team[current].hp > team[current].maxHP{
+            team[current].hp = team[current].maxHP
+        }
+        
     }
     
     func checkTypeResult(pokemon: Pokemon) -> Double{
