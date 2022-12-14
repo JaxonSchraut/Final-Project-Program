@@ -17,8 +17,7 @@ class BattleViewController: UIViewController {
     var isCompTurn = false
     var isPlayerTurn = true
     
-    @IBOutlet weak var playerKillsLabel: UILabel!
-    @IBOutlet weak var compKillsLabel: UILabel!
+
     @IBOutlet weak var playerActivePokemonImage: UIImageView!
     @IBOutlet weak var playerActivePokemonHPLabel: UILabel!
     @IBOutlet weak var compActivePokemonImage: UIImageView!
@@ -64,7 +63,7 @@ class BattleViewController: UIViewController {
                 if toDeal < 0{
                     annoucerLabel.text = "\(team[current].name) used thier special attack, it did \(-(toDeal)) damage!"
                 }else{
-                    annoucerLabel.text = "\(team[current].name) used thier special attack, it did 0 damage!"
+                    annoucerLabel.text = "\(team[current].name) used their special attack, it did 0 damage!"
                 }
             }
             
@@ -75,25 +74,32 @@ class BattleViewController: UIViewController {
         }
     }
     @IBAction func Move2Action(_ sender: UIButton) {
-        let x = (team[current].attack * 20) / (computerTeam[currentComp].def)
-            computerTeam[currentComp].hp =  computerTeam[currentComp].hp - x
-            annoucerLabel.text = "\(team[current].name) struck \(computerTeam[currentComp].name) for \(x) damage!"
-        compActivePokemonHPLabel.text = String(computerTeam[currentComp].hp)
-        playerActivePokemonHPLabel.text = String(team[current].hp)
-        if computerTeam[currentComp].hp <= 0{
-            
-            var displayString = "\(team[current].name) killed \(computerTeam[currentComp].name)!\n"
-            currentComp += 1
-            if currentComp < 3{
-                compActivePokemonImage.image = UIImage(named: computerTeam[currentComp].imageFile)
-                compActivePokemonHPLabel.text = String(computerTeam[currentComp].hp)
-                displayString = displayString + "Computer swaps in \(computerTeam[currentComp].name)!"
-            } else {
-                displayString = displayString + "The entire enemy team has been defeated, you win!"
-                compActivePokemonHPLabel.text = "0"
-                currentComp -= 1
+        if isPlayerTurn{
+            let x = (team[current].attack * 20) / (computerTeam[currentComp].def)
+            let damage  = Int(x)
+            computerTeam[currentComp].hp =  computerTeam[currentComp].hp - Double(damage)
+            annoucerLabel.text = "\(team[current].name) struck \(computerTeam[currentComp].name) for \(damage) damage!"
+            compActivePokemonHPLabel.text = String(computerTeam[currentComp].hp)
+            if computerTeam[currentComp].hp <= 0{
+                
+                var displayString = "\(team[current].name) killed \(computerTeam[currentComp].name)!\n"
+                currentComp += 1
+                if currentComp < 3{
+                    compActivePokemonImage.image = UIImage(named: computerTeam[currentComp].imageFile)
+                    compActivePokemonHPLabel.text = String(computerTeam[currentComp].hp)
+                    displayString = displayString + "Computer swaps in \(computerTeam[currentComp].name)!"
+                } else {
+                    displayString = displayString + "The entire enemy team has been defeated, you win!"
+                    compActivePokemonHPLabel.text = "0"
+                    currentComp -= 1
+                }
+                annoucerLabel.text = displayString
             }
-            annoucerLabel.text = displayString
+            isPlayerTurn = false
+            isCompTurn = true
+        } else {
+            
+            annoucerLabel.text = "Computer must move before you move"
         }
     }
     
