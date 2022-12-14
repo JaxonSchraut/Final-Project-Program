@@ -155,7 +155,26 @@ class BattleViewController: UIViewController {
             
             if x == 2 {
                 
-                
+                let x = (team[current].attack * 20) / (computerTeam[currentComp].def)
+                    computerTeam[currentComp].hp =  computerTeam[currentComp].hp - x
+                    annoucerLabel.text = "\(team[current].name) struck \(computerTeam[currentComp].name) for \(x) damage!"
+                compActivePokemonHPLabel.text = String(computerTeam[currentComp].hp)
+                playerActivePokemonHPLabel.text = String(team[current].hp)
+                if computerTeam[currentComp].hp <= 0{
+                    
+                    var displayString = "\(team[current].name) killed \(computerTeam[currentComp].name)!\n"
+                    currentComp += 1
+                    if currentComp < 3{
+                        compActivePokemonImage.image = UIImage(named: computerTeam[currentComp].imageFile)
+                        compActivePokemonHPLabel.text = String(computerTeam[currentComp].hp)
+                        displayString = displayString + "Computer swaps in \(computerTeam[currentComp].name)!"
+                    } else {
+                        displayString = displayString + "The entire enemy team has been defeated, you win!"
+                        compActivePokemonHPLabel.text = "0"
+                        //currentComp -= 1
+                    }
+                    annoucerLabel.text = displayString
+                }
                 
             }
             
