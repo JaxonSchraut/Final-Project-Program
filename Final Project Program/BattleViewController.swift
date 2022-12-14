@@ -161,26 +161,28 @@ class BattleViewController: UIViewController {
             
             if x == 2 {
                 
-                let x = (team[current].attack * 20) / (computerTeam[currentComp].def)
-                    computerTeam[currentComp].hp =  computerTeam[currentComp].hp - x
-                    annoucerLabel.text = "\(team[current].name) struck \(computerTeam[currentComp].name) for \(x) damage!"
-                compActivePokemonHPLabel.text = String(computerTeam[currentComp].hp)
+                let x = (computerTeam[currentComp].attack * 20) / (team[current].def)
+                let damage = Int(x)
+                    team[current].hp -= Double(damage)
+                    annoucerLabel.text = "\(computerTeam[currentComp].name) struck \(team[current].name) for \(damage) damage!"
                 playerActivePokemonHPLabel.text = String(team[current].hp)
-                if computerTeam[currentComp].hp <= 0{
+                if team[current].hp <= 0{
                     
-                    var displayString = "\(team[current].name) killed \(computerTeam[currentComp].name)!\n"
-                    currentComp += 1
-                    if currentComp < 3{
-                        compActivePokemonImage.image = UIImage(named: computerTeam[currentComp].imageFile)
-                        compActivePokemonHPLabel.text = String(computerTeam[currentComp].hp)
-                        displayString = displayString + "Computer swaps in \(computerTeam[currentComp].name)!"
+                    var displayString = "\(team[current].name) was killed by \(computerTeam[currentComp].name)!\n"
+                    current += 1
+                    if current < 3{
+                        playerActivePokemonImage.image = UIImage(named: team[current].imageFile)
+                        playerActivePokemonHPLabel.text = String(team[current].hp)
+                        displayString = displayString + "Player swaps in \(team[current].name)!"
                     } else {
                         displayString = displayString + "The entire enemy team has been defeated, you win!"
                         compActivePokemonHPLabel.text = "0"
-                        //currentComp -= 1
+                        //current -= 1
                     }
                     annoucerLabel.text = displayString
                 }
+                isPlayerTurn = true
+                isCompTurn = false
                 
             }
             
