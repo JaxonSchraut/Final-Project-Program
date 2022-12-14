@@ -63,16 +63,26 @@ class BattleViewController: UIViewController {
         }
     }
     @IBAction func Move2Action(_ sender: UIButton) {
-        let x = (team[current].attack * 0.9) / (computerTeam[currentComp].def * 0.6)
-        if (computerTeam[currentComp].hp) - x > 0 &&  x > 5{
+        let x = (team[current].attack * 20) / (computerTeam[currentComp].def)
             computerTeam[currentComp].hp =  computerTeam[currentComp].hp - x
             annoucerLabel.text = "\(team[current].name) struck \(computerTeam[currentComp].name) for \(x) damage!"
-        } else {
-            computerTeam[currentComp].hp -= 5
-            annoucerLabel.text = "\(team[current].name) struck \(computerTeam[currentComp].name) for 5 damage!"
+        compActivePokemonHPLabel.text = String(computerTeam[currentComp].hp)
+        playerActivePokemonHPLabel.text = String(team[current].hp)
+        if computerTeam[currentComp].hp <= 0{
+            
+            var displayString = "\(team[current].name) killed \(computerTeam[currentComp].name)!\n"
+            currentComp += 1
+            if currentComp < 3{
+                compActivePokemonImage.image = UIImage(named: computerTeam[currentComp].imageFile)
+                compActivePokemonHPLabel.text = String(computerTeam[currentComp].hp)
+                displayString = displayString + "Computer swaps in \(computerTeam[currentComp].name)!"
+            } else {
+                displayString = displayString + "The entire enemy team has been defeated, you win!"
+                compActivePokemonHPLabel.text = "0"
+                currentComp -= 1
+            }
+            annoucerLabel.text = displayString
         }
-        compActivePokemonHPLabel.text = String(Int(computerTeam[currentComp].hp))
-        playerActivePokemonHPLabel.text = String(Int(team[current].hp))
     }
     
     @IBAction func Move3Action(_ sender: UIButton) {
