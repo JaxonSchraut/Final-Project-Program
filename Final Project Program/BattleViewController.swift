@@ -14,6 +14,9 @@ class BattleViewController: UIViewController {
     var current = 0
     var currentComp = 0
     
+    var isCompTurn = false
+    var isPlayerTurn = true
+    
     @IBOutlet weak var playerKillsLabel: UILabel!
     @IBOutlet weak var compKillsLabel: UILabel!
     @IBOutlet weak var playerActivePokemonImage: UIImageView!
@@ -36,30 +39,39 @@ class BattleViewController: UIViewController {
     }
     
     @IBAction func Move1Action(_ sender: UIButton) {
-        var toDeal = computerTeam[currentComp].def - team[current].attack*(checkTypeResult(pokemon: team[current]))
-        if toDeal > 0 {
-            toDeal = 0
-        }
-    
-        computerTeam[currentComp].hp += toDeal
         
-        if computerTeam[currentComp].hp <= 0{
-            if currentComp < 2{
-                currentComp += 1
-                compActivePokemonImage.image = UIImage(named: computerTeam[currentComp].imageFile)
-                compActivePokemonHPLabel.text = String(computerTeam[currentComp].hp)
-                annoucerLabel.text = "The special attack was lethal, The computer puts in \(computerTeam[currentComp].name)"
-            }else{
-                compActivePokemonHPLabel.text = "0"
-                annoucerLabel.text = "You have knocked out the entire enemy team, Player Wins!"
+        if(isPlayerTurn) {
+            
+            var toDeal = computerTeam[currentComp].def - team[current].attack*(checkTypeResult(pokemon: team[current]))
+            if toDeal > 0 {
+                toDeal = 0
             }
-        } else{
-            compActivePokemonHPLabel.text = "\(computerTeam[currentComp].hp)"
-            if toDeal < 0{
-                annoucerLabel.text = "\(team[current].name) used thier special attack, it did \(-(toDeal)) damage!"
-            }else{
-                annoucerLabel.text = "\(team[current].name) used thier special attack, it did 0 damage!"
+            
+            computerTeam[currentComp].hp += toDeal
+            
+            if computerTeam[currentComp].hp <= 0{
+                if currentComp < 2{
+                    currentComp += 1
+                    compActivePokemonImage.image = UIImage(named: computerTeam[currentComp].imageFile)
+                    compActivePokemonHPLabel.text = String(computerTeam[currentComp].hp)
+                    annoucerLabel.text = "The special attack was lethal, The computer puts in \(computerTeam[currentComp].name)"
+                }else{
+                    compActivePokemonHPLabel.text = "0"
+                    annoucerLabel.text = "You have knocked out the entire enemy team, Player Wins!"
+                }
+            } else{
+                compActivePokemonHPLabel.text = "\(computerTeam[currentComp].hp)"
+                if toDeal < 0{
+                    annoucerLabel.text = "\(team[current].name) used thier special attack, it did \(-(toDeal)) damage!"
+                }else{
+                    annoucerLabel.text = "\(team[current].name) used thier special attack, it did 0 damage!"
+                }
             }
+            
+        isPlayerTurn = false
+        isCompTurn = true
+        } else {
+            annoucerLabel.text = "Computer must move before you move again"
         }
     }
     @IBAction func Move2Action(_ sender: UIButton) {
@@ -86,19 +98,30 @@ class BattleViewController: UIViewController {
     }
     
     @IBAction func Move3Action(_ sender: UIButton) {
-        var x = (team[current].def / 4)
-        team[current].hp += x
-        if team[current].hp > team[current].maxHP{
-            team[current].hp = team[current].maxHP
+        
+        if(isPlayerTurn) {
+            
+            let x = (team[current].def / 4)
+            team[current].hp += x
+            if team[current].hp > team[current].maxHP{
+                team[current].hp = team[current].maxHP
+            }
+            playerActivePokemonHPLabel.text = String(Int(team[current].hp))
+            annoucerLabel.text = "\(team[current].name) healed for \(x) health"
+            
+            
+            isCompTurn = true
+            isPlayerTurn = false
+        } else {
+            annoucerLabel.text = "Computer must move before you move again"
         }
-        playerActivePokemonHPLabel.text = String(Int(team[current].hp))
-        annoucerLabel.text = "\(team[current].name) healed for \(x) health"
     }
     
     @IBAction func makeComputerMoveButton(_ sender: Any) {
-            //var x = Int.random(in: 1...3)
+        
+        if(isCompTurn){
             
-            var x = 1
+            let x = Int.random(in: 1...3)
             
             if x == 1 {
                 
@@ -106,7 +129,7 @@ class BattleViewController: UIViewController {
                 if toDeal > 0 {
                     toDeal = 0
                 }
-            
+                
                 team[current].hp += toDeal
                 
                 if team[current].hp <= 0{
@@ -132,6 +155,8 @@ class BattleViewController: UIViewController {
             
             if x == 2 {
                 
+                
+                
             }
             
             if x == 3{
@@ -140,10 +165,16 @@ class BattleViewController: UIViewController {
                 if computerTeam[currentComp].hp > computerTeam[currentComp].maxHP{
                     computerTeam[currentComp].hp = computerTeam[currentComp].maxHP
                 }
-                playerActivePokemonHPLabel.text = String(Int(team[current].hp))
-                annoucerLabel.text = "\(team[current].name) healed for \(x) health"
+                compActivePokemonHPLabel.text = String(Int(computerTeam[currentComp].hp))
+                annoucerLabel.text = "\(computerTeam[currentComp].name) healed for \(x) health"
             }
             
+            
+            isPlayerTurn = true
+            isCompTurn = false
+        } else {
+            annoucerLabel.text = "You must move before the computer moves again"
+        }
         
     }
     
